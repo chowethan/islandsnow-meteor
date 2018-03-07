@@ -1,20 +1,40 @@
 import React from 'react';
+import { Container, Grid, Form } from 'semantic-ui-react';
 
-/** The Footer appears at the bottom of every page. Rendered by the App Layout component. */
-class Footer extends React.Component {
+export default class Footer extends React.Component {
   render() {
-    const divStyle = { paddingTop: '15px' };
     return (
-        <footer>
-          <div style={divStyle} className="ui center aligned container">
-            <hr />
-              Department of Information and Computer Sciences <br />
-              University of Hawaii<br />
-              Honolulu, HI 96822
-          </div>
-        </footer>
+        <Container fluid className="footer">
+          <Grid container columns={3}>
+            <Grid.Column>
+              <span className="footer-header">Navigation</span>
+              <hr />
+              <a href="#">About Us</a><br />
+              <a href="#">Videos</a><br />
+              <a href="#">Store Locations</a><br />
+              <a href="#">Shipping & Returns</a><br />
+              <a href="#">Terms & Conditions</a><br />
+              <a href="#">Privacy Policy</a>
+            </Grid.Column>
+            <Grid.Column>
+              <span className="footer-header">Main Menu</span>
+              <hr />
+              <a href="#">Men</a><br />
+              <a href="#">Women</a><br />
+              <a href="#">Kids</a><br />
+              <a href="#">Brands</a><br />
+              <a href="#">Search</a>
+            </Grid.Column>
+            <Grid.Column>
+              <span className="footer-header">Connect</span>
+              <hr />
+              Sign up for the latest updates<br />
+              <Form>
+                <input type="text" placeholder="Enter Email Address" style={{width: "75%", height: "50px", borderRadius: 0, textIndent: "10px"}} /><input type="submit" value="Join" style={{width: "25%", height: "50px"}} />
+              </Form>
+            </Grid.Column>
+          </Grid>
+        </Container>
     );
   }
 }
-
-export default Footer;
